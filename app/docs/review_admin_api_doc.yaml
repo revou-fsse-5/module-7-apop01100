@@ -1,0 +1,62 @@
+Review endpoint for client
+---
+tags:
+  - "Reviews"
+summary: "Retrieve product reviews"
+description: "This endpoint allows only admin users to retrieve all product reviews."
+security:
+  - BearerAuth: [  ]
+responses:
+  "200":
+    description: "Success - Reviews retrieved successfully"
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "success show reviews"
+        products:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              id:
+                type: "integer"
+                example: 1
+              product_id:
+                type: "integer"
+                example: 1001
+              user_id:
+                type: "integer"
+                example: 5001
+              rating:
+                type: "integer"
+                example: 4
+              review_text:
+                type: "string"
+                example: "Great product!"
+              created_at:
+                type: "string"
+                format: "date-time"
+                example: "2023-10-10T10:10:10Z"
+              updated_at:
+                type: "string"
+                format: "date-time"
+                example: "2023-10-11T10:10:10Z"
+  "400":
+    description: "Bad Request - Error retrieving reviews"
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Error message details"
+  "403":
+    description: "Forbidden - Only admin role can access"
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Admin role required to access this resource"
+

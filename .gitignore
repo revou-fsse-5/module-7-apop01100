@@ -1,0 +1,42 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution files
+build/
+dist/
+*.egg-info/
+*.eggs/
+
+# Virtual environment
+env/
+venv/
+ENV/
+*.venv
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+
+# Flask specific files
+instance/
+*.log
+
+# Cache
+*.cache
+*.pytest_cache/
+
+
+# Test coverage and test result files
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# System files
+.DS_Store
+Thumbs.db

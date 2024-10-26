@@ -1,0 +1,51 @@
+Login user or admin
+---
+tags:
+  - "Login"
+summary: "User login endpoint"
+description: "This endpoint allows users to log in with their credentials."
+parameters:
+  - name: "body"
+    in: "body"
+    required: true
+    schema:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+          example: "alice90"
+        password:
+          type: "string"
+          example: "hashpassword1"
+      required:
+        - username
+        - password
+    description: "User login credentials"
+responses:
+  "201":
+    description: "login success"
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "login success"
+        access_token:
+          type: "string"
+          example: "JWT_ACCESS_TOKEN"
+  "400":
+    description: "Validation JSON error"
+    schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+          example: "Validation JSON error"
+  "401":
+    description: "Unauthenticated"
+    schema:
+      type: "object"
+      properties:
+        error:
+          type: "string"
+          example: "Incorrect username or password"
